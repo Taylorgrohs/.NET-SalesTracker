@@ -1,0 +1,9 @@
+{
+	"name": "SalesTracker",
+	"private": true,
+  "dependencies": {
+    "jquery": "2.2.3",
+    "ajax": "2.0.0",
+    "bootstrap": "3.3.6"
+  }
+}
