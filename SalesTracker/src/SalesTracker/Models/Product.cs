@@ -16,6 +16,7 @@ namespace SalesTracker.Models
         public string Description { get; set; }
         public int Inventory { get; set; }
         public int Price { get; set; }
+        public int SaleId { get; set; }
         public virtual Sale Sale { get; set; }
     }
 }

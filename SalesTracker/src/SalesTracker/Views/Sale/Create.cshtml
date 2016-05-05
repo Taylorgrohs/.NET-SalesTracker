@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model SalesTracker.Models.Sale
+
+<h2>Make a new sale</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    
+    @Html.LabelFor(model => model.Notes)
+    @Html.EditorFor(model => model.Notes)
+    <input type="submit" value="Create" />
+}
+@Html.ActionLink("Back to List", "Index")

@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using System.Security.Claims
+@model IEnumerable<SalesTracker.Models.Sale>
+
+
+@if (User.IsSignedIn())
+{
+    <p>Hello @User.GetUserName()!</p>
+    @using (Html.BeginForm("LogOff", "Account"))
+    {
+        <input type="submit" class="btn btn-default" value="Log out" />
+    }
+}
+
+<h2>Here are your sales, @User.GetUserName()</h2>
+@if (Model.Any())
+{
+    <ul>
+        @foreach (var listSale in Model)
+        {
+            <li>@Html.DisplayFor(modelSale => listSale.SaleId) | @Html.DisplayFor(modelSale => listSale.Notes)</li>
+
+        }
+    </ul>
+}
+else
+{
+    <p>No sales completed yet</p>
+}
+@Html.ActionLink("New Sale", "Create")
